@@ -96,11 +96,15 @@ print load_fiche_titre($langs->trans($page_name), $linkback, 'title_setup');
 $head = maintenanceatmAdminPrepareHead();
 print dol_get_fiche_head($head, 'about', $langs->trans($page_name), 0, 'maintenanceatm@maintenanceatm');
 
+require_once __DIR__ . '/../class/techatm.class.php';
+$techATM = new \maintenanceatm\TechATM($db);
+
 dol_include_once('/maintenanceatm/core/modules/modMaintenanceATM.class.php');
 $tmpmodule = new modMaintenanceATM($db);
-print $tmpmodule->getDescLong();
 
-// Page end
-print dol_get_fiche_end();
+
+print $techATM->getAboutPage($tmpmodule);
+
+
 llxFooter();
 $db->close();

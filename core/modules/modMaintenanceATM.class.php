@@ -144,6 +144,10 @@ class modMaintenanceATM extends DolibarrModules
 		// The language file dedicated to your module
 		$this->langfiles = array("maintenanceatm@maintenanceatm");
 
+		// Url to the file with your last numberversion of this module
+		require_once __DIR__ . '/../../class/techatm.class.php';
+		$this->url_last_version = \maintenanceatm\TechATM::getLastModuleVersionUrl($this);
+
 		// Prerequisites
 		$this->phpmin = array(7, 0); // Minimum version of PHP required by module
 		$this->need_dolibarr_version = array(11, -3); // Minimum version of Dolibarr required by module
