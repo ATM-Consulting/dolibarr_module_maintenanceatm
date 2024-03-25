@@ -55,6 +55,7 @@ global $langs, $user;
 
 // Libraries
 require_once DOL_DOCUMENT_ROOT."/core/lib/admin.lib.php";
+require_once DOL_DOCUMENT_ROOT."/filefunc.inc.php";
 require_once '../lib/maintenanceatm.lib.php';
 //require_once "../class/myclass.class.php";
 
@@ -269,12 +270,8 @@ print '</legend>';
 print '<div id="maintenance-check-table">';
 
 
-
-print '<table class="tagtable nobottomiftotal liste" >';
-
 // Security warning if install.lock file is missing or if conf file is writable
 if (getDolGlobalString('MAIN_REMOVE_INSTALL_WARNING') || true) {
-	$message = '';
 
 	// TODO : check for maint.lock (je me rappel plus du nom de fichier
 
@@ -282,17 +279,20 @@ if (getDolGlobalString('MAIN_REMOVE_INSTALL_WARNING') || true) {
 	$lockfile = DOL_DATA_ROOT.'/install.lock';
 	if (!empty($lockfile) && !file_exists($lockfile) && is_dir(DOL_DOCUMENT_ROOT."/install")) {
 		$langs->load("errors");
-		$message .= info_admin($langs->trans("WarningLockFileDoesNotExists", DOL_DATA_ROOT).' '.$langs->trans("WarningUntilDirRemoved", DOL_DOCUMENT_ROOT."/install"), 0, 0, '1', 'clearboth');
+		print info_admin($langs->trans("WarningLockFileDoesNotExists", DOL_DATA_ROOT).' '.$langs->trans("WarningUntilDirRemoved", DOL_DOCUMENT_ROOT."/install"), 0, 0, '1', 'clearboth');
 	}
 
 	// Conf files must be in read only mode
-	if (is_writable($conffile)) {	// $conffile is defined into filefunc.inc.php
+	if (is_writable(DOL_DOCUMENT_ROOT.'/'.$conffile)) {	// $conffile is defined into filefunc.inc.php
 		$langs->load("errors");
-		$message .= info_admin($langs->transnoentities("WarningConfFileMustBeReadOnly").' '.$langs->trans("WarningUntilDirRemoved", DOL_DOCUMENT_ROOT."/install"), 0, 0, '1', 'clearboth');
+		print info_admin($langs->transnoentities("WarningConfFileMustBeReadOnly").' '.$langs->trans("WarningUntilDirRemoved", DOL_DOCUMENT_ROOT."/install"), 0, 0, '1', 'clearboth');
 	}
 }
 
+print '<table class="tagtable nobottomiftotal liste" >';
+
 print '<tr class="oddeven" >';
+
 print '<td>'.$langs->trans('LastBackupSql').' <a target="_blank" href="'.dol_buildpath('admin/tools/dolibarr_export.php',1).'" title="'.$langs->trans('NewBackupBdd').'" ><span class="fa fa-link"></span></a></td>';
 print '<td>';
 
