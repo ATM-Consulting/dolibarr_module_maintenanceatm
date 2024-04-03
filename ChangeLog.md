@@ -2,4 +2,5 @@
 
 ## 1.0
 
-Initial version
+- FIX : Retrocompatibility under V19 - 1.1 *03/04/2024*  
+- Initial version
