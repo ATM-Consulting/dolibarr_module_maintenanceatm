@@ -26,7 +26,6 @@
 require_once __DIR__ . '/../backport/v19/core/class/commonhookactions.class.php';
 
 
-
 /**
  * Class ActionsMaintenanceATM
  */
