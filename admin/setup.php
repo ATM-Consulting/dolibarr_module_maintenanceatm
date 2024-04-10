@@ -57,6 +57,7 @@ global $langs, $user;
 require_once DOL_DOCUMENT_ROOT."/core/lib/admin.lib.php";
 require_once DOL_DOCUMENT_ROOT."/filefunc.inc.php";
 require_once '../lib/maintenanceatm.lib.php';
+require_once DOL_DOCUMENT_ROOT.'/core/lib/files.lib.php';
 //require_once "../class/myclass.class.php";
 
 // Translations
