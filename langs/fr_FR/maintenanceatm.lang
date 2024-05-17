@@ -33,6 +33,9 @@ MAINTENANCEATM_MYPARAM1Tooltip = My param 1 tooltip
 MAINTENANCEATM_MYPARAM2=My param 2
 MAINTENANCEATM_MYPARAM2Tooltip=My param 2 tooltip
 
+MAINTENANCEATM_REDIRECT_NEW_URL = Nouvelle url à rediriger lorsque l'on atterri sur la page de login <strong>(En mode maintenance)</strong>.
+MAINTENANCEATM_REDIRECT_NEW_URLTooltip = Laisser vide pour désactiver.<br/>Ajoute une redirection vers la nouvelle URL avec un timer. et change le message d'accueil pour indiquer le changement d'URL.
+
 
 #
 # About page
@@ -72,3 +75,9 @@ ModeMainProdHelp = Mode Production
 NoBackupFound = Aucune sauvegarde trouvée
 LastBackupSql = Dernière sauvegarde de la base de Données
 NewBackupBdd = Nouvelle sauvegarde
+
+ModeMaintenanceActivatedNewUrlTitle = Votre Dolibarr à déménagé
+ModeMaintenanceActivatedNewUrl = Nouvelle adresse
+ModeMaintenanceActivatedNewUrlDescPart1 = Vous allez être redirigé vers la nouvelle adresse dans
+ModeMaintenanceActivatedNewUrlDescPart2 = seconde(s)
+ModeMaintenanceStopTimer = Stopper la redirection
