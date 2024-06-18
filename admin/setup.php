@@ -97,9 +97,8 @@ $formSetup = new FormSetup($db);
 // Enter here all parameters in your setup page
 //
 //// Setup conf for selection of an URL
-//$item = $formSetup->newItem('MAINTENANCEATM_MYPARAM1');
-//$item->fieldOverride = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'];
-//$item->cssClass = 'minwidth500';
+$item = $formSetup->newItem('MAINTENANCEATM_REDIRECT_NEW_URL');
+$item->cssClass = 'minwidth500';
 //
 //// Setup conf for selection of a simple string input
 //$item = $formSetup->newItem('MAINTENANCEATM_MYPARAM2');
