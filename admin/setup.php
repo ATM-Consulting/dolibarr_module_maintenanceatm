@@ -298,7 +298,7 @@ print '<td>'.$langs->trans('LastBackupSql').' <a target="_blank" href="'.dol_bui
 print '<td>';
 
 $fileArray = dol_dir_list($conf->admin->dir_output.'/backup', 'files', 0, '', '', "date", SORT_DESC, 1);
-if(is_array($fileArray)){
+if(!empty($fileArray) && is_array($fileArray)){
 
 	$fileArray = reset($fileArray);
 	$class = $maintTime > (int) $fileArray['date'] ? 'warning' : 'success';
