@@ -1,5 +1,9 @@
 # CHANGELOG MAINTENANCEATM FOR [DOLIBARR ERP CRM](https://www.dolibarr.org)
 
+## UNRELEASED 
+
+- NEW : configuration for redirection on login page to new URL - 1.1.0 *17/05/2024*
+
 ## 1.0
 
 - FIX : Compat V21 - *25/02/2025*  - 1.0.4 
